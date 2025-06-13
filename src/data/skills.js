@@ -17,7 +17,7 @@ import git from "/public/git.svg";
 import canva from "/public/canva.svg";
 import figma from "/public/figma.svg";
 
-export const skills = [
+const skills = [
   { img: html, title: "HTML", percent: 98 },
   { img: css, title: "CSS", percent: 98 },
   { img: js, title: "JavaScript", percent: 89 },
@@ -37,3 +37,5 @@ export const skills = [
   { img: canva, title: "Canva", percent: 92 },
   { img: figma, title: "Figma", percent: 87 },
 ];
+
+export default skills;
