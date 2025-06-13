@@ -9,7 +9,7 @@ export const certificates = [
     issuer: "Filipino Homes",
     date: "2025",
     description:
-      "Proud to be part of the USPF team that competed in Hackestate 2025, a national hackathon hosted by Filipino Homes. Our team secured 3rd place, showcasing our technical skills and innovative thinking in a fast-paced, competitive environment.",
+      "Proud to be part of the USPF team that competed in Hackestate 2025, a local hackathon hosted by Filipino Homes. Our team secured 3rd place, showcasing our technical skills and innovative thinking in a fast-paced, competitive environment.",
     image: hackestate,
   },
   {
