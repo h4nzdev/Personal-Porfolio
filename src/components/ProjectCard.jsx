@@ -35,7 +35,7 @@ const ProjectCard = ({ img, title, description, tech, github, link, delay }) => 
           </div>
         </div>
         <p className="text-slate-400">{description}</p>
-        <div className="flex gap-3 mt-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
           {tech.map((tech) => (
             <span className="py-1 px-2 bg-slate-600 text-slate-100 rounded-lg">
               {tech}
