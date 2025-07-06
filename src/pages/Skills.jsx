@@ -21,11 +21,12 @@ const Skills = () => {
         <div className="mt-10">
           <div className="mt-10">
             <ul className="grid md:grid-cols-2 gap-3">
-              {skills.slice(0, value).map((skill) => (
+              {skills.slice(0, value).map((skill, index) => (
                 <SkillComponents
                   img={skill.img}
                   title={skill.title}
                   percent={skill.percent}
+                  index={index}
                 />
               ))}
             </ul>

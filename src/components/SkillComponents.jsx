@@ -1,14 +1,15 @@
 import React from "react";
 import {motion} from "framer-motion";
 
-const SkillComponents = ({ img, title, percent }) => {
+const SkillComponents = ({ img, title, percent, index }) => {
   return (
     <motion.li
     initial={{opacity: 0, y: 100, filter: "blur(5px)"}}
     whileInView={{opacity: 1, y: 0, filter: "blur(0)"}}
     transition={{duration: 1}}
     viewport={{once: true}}
-    className="flex w-full p-2 items-center">
+    className="flex w-full p-2 items-center"
+    key={index}>
       <img src={img} className="w-10" />
       <div className="w-full ml-2 mb-1">
         <div className="flex justify-between mb-1">
