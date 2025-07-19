@@ -1,30 +1,18 @@
 import React from "react";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
-const SkillComponents = ({ img, title, percent, index }) => {
+const SkillComponents = ({ img, title, index }) => {
   return (
     <motion.li
-    initial={{opacity: 0, y: 100, filter: "blur(5px)"}}
-    whileInView={{opacity: 1, y: 0, filter: "blur(0)"}}
-    transition={{duration: 1}}
-    viewport={{once: true}}
-    className="flex w-full p-2 items-center"
-    key={index}>
-      <img src={img} className="w-10" />
-      <div className="w-full ml-2 mb-1">
-        <div className="flex justify-between mb-1">
-          <p className="text-slate-200">{title}</p>
-          <p className="text-slate-400">{percent}%</p>
-        </div>
-        <div className="w-full h-2 bg-slate-100 rounded overflow-hidden">
-          <motion.div
-            initial={{width: 0}}
-            animate={{width: percent + "%"}}
-            transition={{duration: 1, delay: 1.2}}
-            className="h-full bg-slate-400 rounded transition-all duration-700"
-          ></motion.div>
-        </div>
-      </div>
+      initial={{ opacity: 0, y: 100, filter: "blur(5px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0)" }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="flex flex-col items-center justify-center p-4 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-colors"
+      key={index}
+    >
+      <img src={img} className="w-12 h-12 mb-2 object-contain" alt={title} />
+      <p className="text-slate-200 text-sm text-center">{title}</p>
     </motion.li>
   );
 };
