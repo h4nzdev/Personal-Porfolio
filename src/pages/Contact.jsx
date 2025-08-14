@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { socialLinks } from "../data/social";
 import SocialLinks from "../components/SocialLinks";
 import QuickLinks from "../components/QuickLinks";
+import EmailModal from "../components/EmailModal";
 const Contact = () => {
   const quickLinks = [
     { name: "Start", href: "#start" },
@@ -10,6 +11,8 @@ const Contact = () => {
     { name: "Education", href: "#education" },
     { name: "Achievements", href: "#achievements" },
   ];
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="bg-gray-900 py-16 px-6">
@@ -48,7 +51,7 @@ const Contact = () => {
             </h3>
             <div className="space-y-3">
               {quickLinks.map((link, index) => (
-                <QuickLinks name={link.name} href={link.href}/>
+                <QuickLinks name={link.name} href={link.href} />
               ))}
             </div>
           </div>
@@ -59,22 +62,26 @@ const Contact = () => {
           <div className="bg-gray-800 rounded-lg p-6">
             <p className="text-gray-300 mb-4">Have a project in mind?</p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <a
-                href="mailto:hanzhmagbal@gmail.com"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors flex items-center justify-center"
               >
                 <i className="fas fa-envelope mr-2"></i>
                 Send Email
-              </a>
+              </button>
               <a
                 href="tel:+639927870100"
-                className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-colors"
+                className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-colors flex items-center justify-center"
               >
                 <i className="fas fa-phone mr-2"></i>
                 Call Me
               </a>
             </div>
           </div>
+          <EmailModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
         </div>
       </div>
     </div>
