@@ -16,8 +16,10 @@ const ProjectModal = ({ selectedId, setSelectedId }) => {
   console.log(selectedProject);
 
   return (
-    <div onClick={() => setSelectedId(null)} className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-      <div className="bg-slate-900 md:overflow-y-hidden md:max-h-auto overflow-y-auto rounded-xl max-w-4xl w-full mx-4 overflow-hidden border border-slate-700">
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div onClick={() => setSelectedId(null)} className="bg-black/80 backdrop-blur-sm absolute inset-0"></div>
+      <div className="bg-slate-900 md:overflow-y-hidden md:max-h-auto overflow-y-auto rounded-xl max-w-4xl w-full mx-4 overflow-hidden border border-slate-700
+      z-100">
         {/* Modal Header */}
         <div className="flex justify-between items-center p-6 border-b border-slate-700">
           <h2 className="text-2xl font-bold text-white">
@@ -36,7 +38,7 @@ const ProjectModal = ({ selectedId, setSelectedId }) => {
           <div className="p-6">
             {/* Image Carousel */}
             <div className="relative mb-6">
-              <div className="relative max-h-[90vh] md:max-h-100 rounded-lg overflow-hidden">
+              <div className="relative max-h-50 md:max-h-100 rounded-lg overflow-hidden">
                 <img
                   src={`${selectedProject.images[currentImageIndex]}`}
                   alt={`Project screenshot ${currentImageIndex + 1}`}
