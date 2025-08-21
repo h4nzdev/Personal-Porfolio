@@ -18,32 +18,40 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="absolute top-0 flex items-center justify-center w-full h-15 z-100">
+      <div className="absolute top-5 flex items-center justify-center w-full h-15 z-100">
         <div className="w-[80%] h-full flex items-center justify-between">
           <h1 className="text-4xl font-bold text-blue-500">HM</h1>
-          {!isOpen ? (
-            <button
-              onClick={toggleMenu}
-              className="w-12 flex items-center justify-between flex-col h-7 cursor-pointer transition-all duration-300"
-            >
-              <span className="bg-slate-400 w-full h-1 rounded transition-all duration-500"></span>
-              <span className="bg-slate-400 w-full h-1 rounded transition-all duration-500"></span>
-              <span className="bg-slate-400 w-full h-1 rounded transition-all duration-500"></span>
-            </button>
-          ) : (
-            <button
-              onClick={toggleMenu}
-              className="w-12 flex items-center justify-between flex-col h-7 cursor-pointer transition-all duration-500"
-            >
-              <span className="bg-slate-400 w-full h-1 rounded rotate-45 translate-y-3 transition-all duration-500"></span>
-                <span className="bg-slate-400 w-full h-1 rounded -rotate-45 -translate-y-3 transition-all duration-500"></span>
-            </button>
-          )}
+
+          <button
+            onClick={toggleMenu}
+            className="w-12 flex items-center justify-between flex-col h-7 cursor-pointer transition-all duration-300"
+          >
+            {/* Top line */}
+            <span
+              className={`bg-slate-400 w-full h-1 rounded transition-all duration-500 ${
+                isOpen ? "rotate-45 translate-y-3" : ""
+              }`}
+            ></span>
+
+            {/* Middle line */}
+            <span
+              className={`bg-slate-400 w-full h-1 rounded transition-all duration-500 ${
+                isOpen ? "opacity-0" : "opacity-100"
+              }`}
+            ></span>
+
+            {/* Bottom line */}
+            <span
+              className={`bg-slate-400 w-full h-1 rounded transition-all duration-500 ${
+                isOpen ? "-rotate-45 -translate-y-3" : ""
+              }`}
+            ></span>
+          </button>
         </div>
       </div>
 
       {isOpen && (
-        <div className="fixed top-16 left-0 w-full bg-gray-900/95 backdrop-blur-md z-50">
+        <div className="fixed top-20 left-0 w-full bg-gray-900/95 backdrop-blur-md z-50">
           <div className="w-[80%] mx-auto py-6">
             {navLinks.map((link, index) => (
               <a
